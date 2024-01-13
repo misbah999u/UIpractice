@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header, article, aside, footer {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #5858FA;
+      color: #CEECF5;
+      text-align: center;
+    }
+
+    article {
+      background-color: #A9D0F5;
+    }
+
+    aside {
+      background-color: #58D3F7;
+    }
+
+    footer {
+      background-color: #2E2EFE;
+      color: #CEECF5;
+      text-align: center;
+    }
+
+    /* Flexbox layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    article, aside {
+      flex: 1;
+    }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 600px) {
+      header, article, aside, footer {
+        flex: 1;
+      }
+
+      .center {
+        width: 100%;
+      }
+    }
+
+    .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #555;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #F5A9F2;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="center">
+      <h1>Blockchain and Cryptocurrencies</h1>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <h3>Blockchain</h3>
+      <button type="button" class="collapsible">Blockchain</button>
+      <div class="content">
+        <p>A blockchain is a decentralized and distributed ledger that records transactions across a network of computers in a secure and transparent way.</p>
+      </div>
+      <h3>Cryptocurrencies</h3>
+      <button type="button" class="collapsible">Cryptocurrencies</button>
+      <div class="content">
+        <p>Cryptocurrencies are digital or virtual currencies that use cryptography for security and operate on a blockchain or similar technology.</p>
+      </div>
+    </article>
+
+    <aside>
+      <h3>Current Trends</h3>
+      <button type="button" class="collapsible">NFTs (Non-Fungible Tokens)</button>
+      <div class="content">
+        <p>Non-fungible tokens, representing unique digital assets, gained significant attention. NFTs are used for various purposes, including digital art, collectibles, and gaming.</p>
+      </div>
+
+      <button type="button" class="collapsible">DeFi (Decentralized Finance)</button>
+      <div class="content">
+        <p>DeFi continued to be a major trend, with decentralized applications providing financial services like lending, borrowing, and trading without traditional intermediaries.</p>
+      </div>
+
+      <button type="button" class="collapsible">Metaverse and Virtual Real Estate</button>
+      <div class="content">
+        <p>The concept of the metaverse, a virtual shared space, became more popular. Virtual real estate within these metaverses, often bought using cryptocurrencies, saw increased interest.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="center">
+      <h3>Future Predictions</h3>
+    </div>
+    <button type="button" class="collapsible">Possible Outcome</button>
+    <div class="content">
+      <p>Cryptocurrency adoption may continue to grow, driven by factors such as institutional interest, regulatory clarity, and advancements in technology. More businesses and individuals may integrate cryptocurrencies into their financial activities.</p>
+    </div>
+  </footer>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
